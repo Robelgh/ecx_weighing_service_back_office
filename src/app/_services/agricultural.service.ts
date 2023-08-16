@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { environment } from '../../environments';
-import { Agricultural } from '../_model';
+import { environment } from '../../environments/environment.dev';
+import { Agricultural } from '../_model/agricultural';
 
-const baseUrl = `${environment.apiUrl}/users`;
+const baseUrl = `${environment.apiUrl}/Agricultural`;
 
 @Injectable({ providedIn: 'root' })
-export class UserService {
+export class AgriculturalService {
     constructor(private http: HttpClient) { }
 
     getAll() {
-        return this.http.get<User[]>(baseUrl);
+        return this.http.get<Agricultural[]>(baseUrl);
     }
 
     getById(id: string) {
-        return this.http.get<User>(`${baseUrl}/${id}`);
+        return this.http.get<Agricultural>(`${baseUrl}/${id}`);
     }
 
     create(params: any) {
