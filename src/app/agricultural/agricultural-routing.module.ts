@@ -9,8 +9,8 @@ const routes: Routes = [
     {
         path: '', component: LayoutComponent,
         children: [
-            { path: '', component: ListComponent }
-            // { path: 'add', component: AddEditComponent },
+            { path: '', component: ListComponent },
+            { path: 'add', component: AddEditComponent },
             // { path: 'edit/:id', component: AddEditComponent }
         ]
     }

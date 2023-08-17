@@ -1,4 +1,4 @@
-<h1>Users</h1>
+<h1>Agricultural</h1>
 <a routerLink="add" class="btn btn-sm btn-success mb-2">Add Agriculture</a>
 <table class="table table-striped">
     <thead>
@@ -11,9 +11,52 @@
             <th >License</th>
             <th >PlaceIssued</th>
             <th >TruckPlate</th>
+            <th>TrailerPlate</th>
+            <th>VoucherNumber</th>
+
+            <td>Action</td>
+            <!-- <th>TruckNumberPlomps</th>
+            <th>TrailerNumberPlomps</th>
+            <th>Region</th>
+            <th>Zone</th>
+            <th>Woreda</th>
+            <th>SpecficArea</th>
+            <th>ProductionYear</th>
+            <th>NumberOfBags</th>
+            <th>VehicleSize</th>
+            <th>EstimatedWeight</th>
+            <th>GrossWeight</th>
+            <th>TicketNumber</th>
+            <th>DateReceived</th> -->
+
         </tr>
     </thead>
     <tbody>
-      
+        <tr *ngFor="let agricultural of agricultural">
+            <td>{{agricultural.consignment}}</td>
+            <td>{{agricultural.warehouse}}</td>
+            <td>{{agricultural.clientId}}</td>
+            <td>{{agricultural.commodity}}</td>
+            <td>{{agricultural.driverName}}</td>
+            <td>{{agricultural.license}}</td>
+            <td>{{agricultural.placeIssued}}</td>
+            <td>{{agricultural.truckPlate}}</td>
+            <td>{{agricultural.trailerPlate}}</td>
+            <td>{{agricultural.voucherNumber}}</td>
+
+          
+            <td style="white-space: nowrap">
+                <!-- <a routerLink="edit/{{agricultural.id}}" class="btn btn-sm btn-primary mr-1">Edit</a> -->
+                <button (click)="deleteUser(agricultural.id)" class="btn btn-sm btn-danger btn-delete-user">
+                    <span *ngIf="agricultural.isDeleting" class="spinner-border spinner-border-sm"></span>
+                    <span *ngIf="!agricultural.isDeleting">Delete</span>
+                </button>
+            </td>
+        </tr>
+        <tr *ngIf="!agricultural">
+            <td colspan="4" class="text-center">
+                <span class="spinner-border spinner-border-lg align-center"></span>
+            </td>
+        </tr>
     </tbody>
 </table>

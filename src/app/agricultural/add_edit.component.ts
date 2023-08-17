@@ -26,6 +26,52 @@ export class AddEditComponent implements OnInit{
     ) {}
 
     ngOnInit() {
+
+      this.id = this.route.snapshot.params['id'];
+        this.isAddMode = !this.id;
+        
+        // password not required in edit mode
+        const passwordValidators = [Validators.minLength(6)];
+        if (this.isAddMode) {
+            passwordValidators.push(Validators.required);
+        }
+
+        const formOptions: AbstractControlOptions = { validators: MustMatch('password', 'confirmPassword') };
+        this.form = this.formBuilder.group({
+            consignment: ['', Validators.required],
+            warehouse: ['', Validators.required],
+            clientId: ['', Validators.required],
+            commodity: ['', [Validators.required]],
+            driverName: ['', Validators.required],
+            license: ['', Validators.required],
+            placeIssued: ['', Validators.required],
+            truckPlate: ['', [Validators.required]],
+            trailerPlate: ['', Validators.required],
+            voucherNumber: ['', Validators.required],
+            truckNumberPlomps: ['', Validators.required],
+            trailerNumberPlomps: ['', [Validators.required]],
+            region: ['', Validators.required],
+            zone: ['', Validators.required],
+            woreda: ['', Validators.required],
+            specficArea: ['', [Validators.required]],
+
+            productionYear: ['', Validators.required],
+            numberOfBags: ['', Validators.required],
+            vehicleSize: ['', [Validators.required]],
+            estimatedWeight: ['', Validators.required],
+            grossWeight: ['', Validators.required],
+            ticketNumber: ['', Validators.required],
+            dateReceived: ['', [Validators.required]],
+            
+            password: ['', [Validators.minLength(6), this.isAddMode ? Validators.required : Validators.nullValidator]],
+            confirmPassword: ['', this.isAddMode ? Validators.required : Validators.nullValidator]
+        }, formOptions);
+
+        if (!this.isAddMode) {
+            this.agriculturalService.getById(this.id)
+                .pipe(first())
+                .subscribe(x => this.form.patchValue(x));
+        }
      
   }
 }

@@ -1,29 +1,32 @@
 
 
 export class Agricultural {
-    Consignment!: string;
-    Warehouse!: string;
-    ClientId!: string;
-    Commodity!: string;
-    DriverName!: string;
-    License!: string;
-    PlaceIssued!: string;
-    TruckPlate!: string;
-    TrailerPlate!: string;
-    VoucherNumber!: string;
-    TruckNumberPlomps!: string;
-    TrailerNumberPlomps!: string;
-    Region!: string;
-    Zone!: string;
-    Woreda!: string;
-    SpecficArea!: string;
-    ProductionYear!: number;
-    NumberOfBags!: number;
-    VehicleSize!: number;
-    EstimatedWeight!: number;
-    GrossWeight!: number;
-    TicketNumber!: string;
-    DateReceived!: number;
+    id!:string;
+    consignment!: string;
+    warehouse!: string;
+    clientId!: string;
+    commodity!: string;
+    driverName!: string;
+    license!: string;
+    placeIssued!: string;
+    truckPlate!: string;
+    trailerPlate!: string;
+    voucherNumber!: string;
+    truckNumberPlomps!: string;
+    trailerNumberPlomps!: string;
+    region!: string;
+    zone!: string;
+    woreda!: string;
+    specficArea!: string;
+    productionYear!: number;
+    numberOfBags!: number;
+    vehicleSize!: number;
+    estimatedWeight!: number;
+    grossWeight!: number;
+    ticketNumber!: string;
+    dateReceived!: number;
+
+    isDeleting: boolean = false;
 }
 
 
