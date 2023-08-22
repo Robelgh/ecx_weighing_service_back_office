@@ -46,7 +46,7 @@
 
           
             <td style="white-space: nowrap">
-                <!-- <a routerLink="edit/{{agricultural.id}}" class="btn btn-sm btn-primary mr-1">Edit</a> -->
+                <a routerLink="edit/{{agricultural.id}}" class="btn btn-sm btn-primary mr-1">Edit</a>
                 <button (click)="deleteUser(agricultural.id)" class="btn btn-sm btn-danger btn-delete-user">
                     <span *ngIf="agricultural.isDeleting" class="spinner-border spinner-border-sm"></span>
                     <span *ngIf="!agricultural.isDeleting">Delete</span>

@@ -16,8 +16,6 @@ export class ListComponent implements OnInit {
         console.log(this.agricultural)
          }
 
-  
-
         async deleteUser(id: string) {
             const agricultural = this.agricultural.find(x => x.id === id);
             if (!agricultural) return;
