@@ -51,6 +51,7 @@
                     <span *ngIf="agricultural.isDeleting" class="spinner-border spinner-border-sm"></span>
                     <span *ngIf="!agricultural.isDeleting">Delete</span>
                 </button>
+                <a routerLink="report/{{agricultural.id}}" class="btn btn-sm btn-primary mr-1">Report</a>
             </td>
         </tr>
         <tr *ngIf="!agricultural">

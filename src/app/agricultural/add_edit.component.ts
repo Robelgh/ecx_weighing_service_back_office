@@ -33,14 +33,14 @@ export class AddEditComponent implements OnInit{
 
         this.form = this.formBuilder.group(
           {
-             id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-             createdBy: "string",
-             createdDate: "2023-08-22T13:31:32.485Z",
-             updatedDate: "2023-08-22T13:31:32.485Z",
-             updatedBy: "string",
+             id: "00000000-0000-0000-0000-000000000000",
+             createdBy: "robel",
+             createdDate: "2023-08-23T08:17:13.733Z",
+             updatedDate: "2023-08-23T08:17:13.733Z",
+             updatedBy: "mrx",
              consignment: ['', Validators.required],
              warehouse: ['', Validators.required],
-             clientId: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+             clientId: ['', Validators.required],
              commodity: ['', Validators.required],
              driverName: ['', Validators.required],
              license: ['', Validators.required],
@@ -64,7 +64,7 @@ export class AddEditComponent implements OnInit{
              weighbridgeservicefee:  ['',Validators.required],
              weighbridgeserviceprovider:  ['',Validators.required],
              timeReceved:  ['',Validators.required],
-             dateReceived: "2023-08-22T13:31:32.485Z"
+             dateReceived: ['',Validators.required],
           }
         );
         if (!this.isAddMode) {
@@ -111,13 +111,13 @@ export class AddEditComponent implements OnInit{
 
     private updateAgricultural() {
         console.log(this.form.value)
-        // this.agriculturalService.update(this.id, this.form.value)
-        //     .pipe(first())
-        //     .subscribe(() => {
-        //         this.alertService.success('Agricultural updated', { keepAfterRouteChange: true });
-        //         this.router.navigate(['../../'], { relativeTo: this.route });
-        //     })
-        //     .add(() => this.loading = false);
+        this.agriculturalService.update(this.id, this.form.value)
+            .pipe(first())
+            .subscribe(() => {
+                this.alertService.success('Agricultural updated', { keepAfterRouteChange: true });
+                this.router.navigate(['../../'], { relativeTo: this.route });
+            })
+            .add(() => this.loading = false);
     }
     
       onReset(): void {

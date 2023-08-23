@@ -13,7 +13,7 @@
                       <input type="radio" value="IF" name="consignment" formControlName="consignment" > IF
                     </label>
             </label>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+
             <div *ngIf="submitted && f['consignment'].errors" class="invalid-feedback">
                 <div *ngIf="f['consignment'].errors['required']">Consignment is required</div>
               </div>
@@ -310,7 +310,7 @@
               </div>
         </div>
 
-        <div class="form-group col-5 m-3">
+      <div class="form-group col-5 m-3">
           <label>Date Received</label>
           <input type="date" 
                  formControlName="dateReceived" 
@@ -321,19 +321,18 @@
               <div *ngIf="f['dateReceived'].errors['required']">Date Received is required</div>
             </div>
       </div>
-        <div class="form-group col-5 m-3">
-          <label>Time Received</label>
-          <input type="time" 
-                 formControlName="timeReceived" 
-                 class="form-control" 
-                 [ngClass]="{ 'is-invalid': submitted && f['timeReceived'].errors }"      
-          /> 
-          <div *ngIf="submitted && f['timeReceived'].errors" class="invalid-feedback">
-              <div *ngIf="f['timeReceived'].errors['required']">Time Received is required</div>
-            </div>
+      <div class="form-group col-5 m-3">
+        <label>Time Received</label>
+        <input type="time" 
+               formControlName="timeReceved" 
+               class="form-control" 
+               [ngClass]="{ 'is-invalid': submitted && f['timeReceved'].errors }"      
+        /> 
+        <div *ngIf="submitted && f['timeReceved'].errors" class="invalid-feedback">
+            <div *ngIf="f['timeReceved'].errors['required']">Time Received is required</div>
+          </div>
       </div>
 
-    
     </div>
  
   

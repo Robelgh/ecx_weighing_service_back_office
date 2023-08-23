@@ -3,3 +3,8 @@ tr
     width: 100%;
     overflow-x: scroll;
 }
+
+.title
+{
+  display:none;
+}
