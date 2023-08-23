@@ -11,7 +11,8 @@ export class AgriculturalService {
     constructor(private http: HttpClient) { }
 
     async getAll() {
-        return await firstValueFrom(this.http.get<Agricultural[]>(baseUrl));
+        return await firstValueFrom(this.http.get<any>(baseUrl));
+        // return this.httpClient.get(baseUrl);
     }
 
     getById(id: string) {
@@ -19,6 +20,7 @@ export class AgriculturalService {
     }
 
     create(params: any) {
+        console.log(params)
         return this.http.post(baseUrl, params);
     }
 

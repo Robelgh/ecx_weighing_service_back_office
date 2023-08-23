@@ -14,6 +14,7 @@ export class ListComponent implements OnInit {
         this.agricultural= await this.agriculturalService.getAll()
       
         console.log(this.agricultural)
+        
          }
 
         async deleteUser(id: string) {

@@ -33,33 +33,38 @@ export class AddEditComponent implements OnInit{
 
         this.form = this.formBuilder.group(
           {
-            consignment: ['', Validators.required],
-            warehouse: ['', Validators.required],
-            clientId: ['', Validators.required],
-            commodity: ['', [Validators.required]],
-            driverName: ['', Validators.required],
-            license: ['', Validators.required],
-            placeIssued: ['', Validators.required],
-            truckPlate: ['', [Validators.required]],
-            trailerPlate: ['', Validators.required],
-            voucherNumber: ['', Validators.required],
-            truckNumberPlomps: ['', Validators.required],
-            trailerNumberPlomps: ['', [Validators.required]],
-            region: ['', Validators.required],
-            zone: ['', Validators.required],
-            woreda: ['', Validators.required],
-            specficArea: ['', [Validators.required]],
-            productionYear: ['', Validators.required],
-            numberOfBags: ['', Validators.required],
-            vehicleSize: ['', [Validators.required]],
-            estimatedWeight: ['', Validators.required],
-            grossWeight: ['', Validators.required],
-            ticketNumber: ['', Validators.required],
-            dateReceived: ['', [Validators.required]],
-            // timeReceived: ['', Validators.required],
-            bankslip: ['', Validators.required],
-            weighbridgeservicefee: ['', Validators.required],
-            weighbridgeserviceprovider: ['', [Validators.required]],
+             id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+             createdBy: "string",
+             createdDate: "2023-08-22T13:31:32.485Z",
+             updatedDate: "2023-08-22T13:31:32.485Z",
+             updatedBy: "string",
+             consignment: ['', Validators.required],
+             warehouse: ['', Validators.required],
+             clientId: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+             commodity: ['', Validators.required],
+             driverName: ['', Validators.required],
+             license: ['', Validators.required],
+             placeIssued: ['', Validators.required],
+             truckPlate: ['', Validators.required],
+             trailerPlate: ['', Validators.required],
+             voucherNumber: ['', Validators.required],
+             truckNumberPlomps: ['', Validators.required],
+             trailerNumberPlomps: ['', Validators.required],
+             region: ['', Validators.required],
+             zone: ['', Validators.required],
+             woreda: ['', Validators.required],
+             specficArea: ['', Validators.required],
+             productionYear: ['',Validators.required],
+             numberOfBags:  ['',Validators.required],
+             vehicleSize:  ['',Validators.required],
+             estimatedWeight:  ['',Validators.required],
+             grossWeight:  ['',Validators.required],
+             ticketNumber:  ['',Validators.required],
+             bankslip:  ['',Validators.required],
+             weighbridgeservicefee:  ['',Validators.required],
+             weighbridgeserviceprovider:  ['',Validators.required],
+             timeReceved:  ['',Validators.required],
+             dateReceived: "2023-08-22T13:31:32.485Z"
           }
         );
         if (!this.isAddMode) {
@@ -93,6 +98,7 @@ export class AddEditComponent implements OnInit{
     }
 
     private createAgricultural() {
+        console.log("this.form.value")
         console.log(this.form.value)
         this.agriculturalService.create(this.form.value)
             .pipe(first())
