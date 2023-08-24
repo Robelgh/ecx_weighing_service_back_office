@@ -16,7 +16,7 @@ export class AgriculturalService {
     }
 
     getById(id: string) {
-        return this.http.get<Agricultural>(`${baseUrl}/${id}`);
+        return this.http.get<any>(`${baseUrl}/${id}`);
     }
 
     create(params: any) {
